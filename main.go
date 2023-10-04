@@ -23,6 +23,11 @@ func main(){
 	router := gin.Default()
 	router.Use(CORSMiddleware())
 	uc := controllers.NewAPIController(getSession())
+	router.GET("/api/", func(c *gin.Context){
+		c.JSON(200, gin.H{
+			"message": "pong",
+		})
+	})
 	router.GET("/api/projects", uc.GetProjects)
 	router.GET("/api/project/:id", uc.GetProjectById)
 	// r.GET("/api/projects/:id", uc.GetProjectById )
@@ -33,7 +38,7 @@ func main(){
 	if port == "" {
 		port = "8080"
 	}
-	if err := router.Run(":" + port); err != nil {
+	if err := router.Run("0.0.0.0:" + port); err != nil {
 		log.Panicf("error: %s", err)
 	}
 }

@@ -16,10 +16,6 @@ import (
 func main(){
 
 	// r := httprouter.New()
-	err := godotenv.Load(".env")
-	if err != nil{
-	log.Fatalf("Error loading .env file: %s", err)
-	}
 	router := gin.Default()
 	router.Use(CORSMiddleware())
 	uc := controllers.NewAPIController(getSession())

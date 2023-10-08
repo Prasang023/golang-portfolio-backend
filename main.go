@@ -3,7 +3,6 @@ package main
 import (
 "log"
 "os"
-"github.com/joho/godotenv"
 "github.com/Prasang023/mongo-go/controllers"
 "context"
 "fmt"

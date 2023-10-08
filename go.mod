@@ -1,6 +1,6 @@
 module github.com/Prasang023/mongo-go
 
-go 1.23
+go 1.21.1
 
 require (
 	github.com/bytedance/sonic v1.9.1 // indirect
